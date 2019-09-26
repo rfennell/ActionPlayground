@@ -1,0 +1,8 @@
+   - name: Apply Version to JSON file
+      uses: rfennell/JSONFileVersioner@V1
+      with:
+        path: 'testdata'
+        version: '1.2.3.4'
+        field: 'version'
+        filenamepattern: '.json'
+        recursion: 'true'
