@@ -7,6 +7,6 @@ describe("A basic test", () => {
       var actual = 1 + 1;
 
       // assert
-      expect(actual).toBe(3);
+      expect(actual).toBe(2);
     });
 })
