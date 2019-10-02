@@ -21,7 +21,7 @@ jobs:
       with:
         path: 'testdata'
         field: 'version'
-        versio: '1.2.3'
+        VersionNumber: '1.2.3'
         filenamepattern: '.json' 
         recursion: 'true'
     - name: npm install, build, and test
