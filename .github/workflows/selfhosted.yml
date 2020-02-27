@@ -1,6 +1,6 @@
 name: Self Hosted
 
-on: []
+on: [push]
 
 jobs:
   build:
