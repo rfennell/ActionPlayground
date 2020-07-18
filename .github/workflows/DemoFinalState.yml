@@ -1,6 +1,8 @@
 name: Demo Final State
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch: 
 
 jobs:
   build:
