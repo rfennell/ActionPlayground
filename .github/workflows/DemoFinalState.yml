@@ -1,6 +1,8 @@
-name: Node CI
+name: Demo Final State
 
-on: [push]
+on: 
+  push:
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -8,15 +10,18 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [8, 10, 12]
+        node_version: ['8', '10', '12']
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build --if-present
+    - run: npm test
     - uses: rfennell/JSONFileVersioner@v1
       with:
         path: 'testdata'
@@ -24,10 +29,5 @@ jobs:
         VersionNumber: '1.2.3'
         filenamepattern: '.json' 
         recursion: 'true'
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm test
       env:
         CI: true
