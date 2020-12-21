@@ -5,8 +5,14 @@ on:
   workflow_dispatch: 
 
 jobs:
+  releaseNotes:
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: rfennell/ReleaseNotesAction@main
+      with:
+        milliseconds: 100
+  
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -22,9 +28,6 @@ jobs:
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
-    - uses: rfennell/ReleaseNotesAction@main
-      with:
-        milliseconds: 100
     - uses: rfennell/JSONFileVersioner@v1
       with:
         path: 'testdata'
