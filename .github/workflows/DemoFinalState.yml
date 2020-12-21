@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: rfennell/ReleaseNotesAction@main
       with:
-        milliseconds: 100
-  
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+ 
   build:
     runs-on: ${{ matrix.os }}
     strategy:
