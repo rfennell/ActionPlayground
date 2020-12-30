@@ -8,6 +8,7 @@ jobs:
   releaseNotes:
     runs-on: ubuntu-latest 
     steps:
+    - uses: actions/checkout@v2
     - uses: rfennell/ReleaseNotesAction@initial-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
