@@ -31,3 +31,12 @@ jobs:
         recursion: 'true'
       env:
         CI: true
+
+    - uses: rfennell/ReleaseNoteAction@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+         templateFile: '${{ github.workspace }}/__tests__/template.md'
+         outputfile: '${{ github.workspace }}/__tests__/releasenotes.md'
+         extensionsfile: '${{ github.workspace }}/__tests__/customextensions.js'
+      
