@@ -31,7 +31,7 @@ jobs:
         recursion: 'true'
       env:
         CI: true
- `  - name: Check out my other private repo
+    - name: Check out my other private repo
       uses: actions/checkout@v2
       with:
         repository: rfennell/SampleRepo
