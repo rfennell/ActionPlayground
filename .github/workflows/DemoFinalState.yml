@@ -48,4 +48,4 @@ jobs:
       with:
         name: ReleaseNotes
         path: |
-          '${{ github.workspace }}/releasenotes.md'   
+          ./releasenotes.md'   
