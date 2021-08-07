@@ -15,10 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Check out my other private repo
-      uses: actions/checkout@v2
-      with:
-        repository: rfennell/SampleRepo
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -35,7 +31,11 @@ jobs:
         recursion: 'true'
       env:
         CI: true
-
+ `  - name: Check out my other private repo
+      uses: actions/checkout@v2
+      with:
+        repository: rfennell/SampleRepo
+ 
   ReleaseNotes:
     runs-on: ubuntu-latest
     steps:
